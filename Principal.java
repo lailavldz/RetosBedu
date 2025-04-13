@@ -1,14 +1,29 @@
-public class Principal {
-    public static void main(String[] args) {
-        //CRearun objeto de los productos con el constructor
-        Entrada entrada1= new Entrada("Obra de teatro", 450);
-        Entrada entrada2= new Entrada("SKZ", 3190);
+import java.util.Scanner;
 
-        entrada1.mostrarInformacion();
-        entrada2.mostrarInformacion();
+public class Principal{
+    public static void main(String[] args){
+        //Se crea el scanner
+        Scanner sc = new Scanner(System.in);
 
-        //Mostrar info del reto de record
-        Record entrada3= new Record("Musical glee", 231.31);
-        entrada3.mostrarInformacion();
+        //Se crea el objeto
+        Paciente paciente1= new Paciente();
+
+        //Pedirle los datos del paciente
+        System.out.print("Ingresa el nombre del paciente: ");
+        paciente1.nombre=sc.nextLine();
+
+        System.out.print("ingesa la edad del paciente:");
+        paciente1.edad=sc.nextInt();
+        //nextint no limpia buffer, o sea que este comando no limpia el buffer y se queda con muchísima información
+        sc.nextLine();
+
+        System.out.print("ingresa el expediente del paciente:");
+        paciente1.exp=sc.nextLine();
+
+        sc.close();
+
+        paciente1.mostrarInformacion();
+
+
     }
 }
